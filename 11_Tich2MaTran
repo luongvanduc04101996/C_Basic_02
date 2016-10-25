@@ -1,0 +1,55 @@
+#include<stdio.h>
+void main(){
+int NhapMaTran(int n,int m,int a[n][m])
+{
+    int i,j;
+    for(i=1;i<=n;i++)
+    {
+        for(j=1;j<=m;j++)
+            {
+            printf("Phan tu [%d][%d]=",i,j);
+            scanf("%d",&a[i][j]);
+            }
+    }
+    return 0;
+}
+int XuatMaTran(int n,int m,int a[n][m])
+{
+    int i,j;
+    for(i=1;i<=n;i++)
+    {
+        for(j=1;j<=m;j++)
+            {
+                printf("%d\t",a[i][j]);
+            }
+        printf("\n\n");
+    }
+    return 0;
+}
+int n,m,p,i,j,k;
+printf("Nhap n,m va p:\n");
+scanf("%d%d%d",&n,&m,&p);
+int a[n][m],b[m][p],c[n][p];
+printf("Ma tran A:\n");
+NhapMaTran(n,m,a);
+printf("Ma tran B:\n");
+NhapMaTran(m,p,b);
+printf("Ma tran ban nhap:\n");
+printf("Ma tran A:\n");
+XuatMaTran(n,m,a);
+printf("Ma tran B:\n");
+XuatMaTran(m,p,b);
+for(i=1;i<=n;i++)
+{
+    for(j=1;j<=p;j++)
+    {
+        c[i][j]=0;
+        for(k=1;k<=m;k++)
+        {
+            c[i][j]+=a[i][k]*b[k][j];
+        }
+    }
+}
+printf("Tich 2 ma tran A*B = C la:\n");
+XuatMaTran(n,p,c);
+}
