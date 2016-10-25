@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<math.h>
+void main(){
+int i=2000;
+float gDP,tocDo,mang[50];
+printf("Nhap GDP nam 2000 va toc do tang truong:\n");
+scanf("%f%f",&gDP,&tocDo);
+printf("Nam\tGDP\n");
+while(i>=2000)
+{
+    mang[i-2000]=gDP*pow(tocDo+1,i-2000);
+    printf("%d\t%.2f\n",i,mang[i-2000]);
+    if(mang[i-2000]>=2*gDP) break;
+    else i++;
+}
+}
+
