@@ -1,0 +1,53 @@
+#include<stdio.h>
+void main(){
+int n,m;
+printf("Nhap so phan tu cua 2 day A va B:\n");
+scanf("%d%d",&n,&m);
+int a[n+1],b[m+1];
+printf("Nhap day:\n");
+int i;
+for(i=1;i<=n;i++)
+{
+    printf("A[%d]=\n",i);
+    scanf("%d",&a[i]);
+}
+for(i=1;i<=m;i++)
+{
+    printf("B[%d]=\n",i);
+    scanf("%d",&b[i]);
+}
+int c[n+m+2];
+int SapXep(int m,int n,int i,int j,int k)
+{
+    if(i>m+1||j>n+1)
+        return 0;
+    else
+    {
+        if(a[i]<b[j])
+        {
+            c[k]=a[i];
+            i++;
+            k++;
+            return SapXep(m,n,i,j,k);
+        }
+        else
+        {
+            c[k]=b[j];
+            j++;
+            k++;
+            return SapXep(m,n,i,j,k);
+        }
+    }
+}
+SapXep(n,m,1,1,1);
+printf("Day A = ");
+for(i=1;i<=n;i++)
+    printf("%d\t",a[i]);
+printf("\nDay B = ");
+for(i=1;i<=m;i++)
+    printf("%d\t",b[i]);
+printf("\nDay C = ");
+for(i=1;i<=n+m;i++)
+    printf("%d\t",c[i]);
+
+}
