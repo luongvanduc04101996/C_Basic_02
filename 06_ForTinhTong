@@ -1,0 +1,22 @@
+#include<stdio.h>
+void main(){
+int n,i;
+float s=0;
+printf("Nhap so:\n");
+scanf("%d",&n);
+int GiaiThua(int a){
+    int i,giaiThua=1;
+    for(i=a;i>1;i--)
+    {
+        giaiThua*=i;
+    }
+    return giaiThua;
+}
+for(i=1;i<=n;i++)
+{
+    s+=(float)1/GiaiThua(i);
+}
+
+printf("S = %.2f",s);
+}
+
