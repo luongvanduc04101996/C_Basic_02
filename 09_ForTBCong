@@ -1,0 +1,34 @@
+#include<stdio.h>
+void main(){
+int n,i,s1=0,s2=0;
+float tb=0,tb1=0,tb2=0;
+printf("Co bao nhieu so:\n");
+scanf("%d",&n);
+float mang[n];
+printf("Nhap day so:\n");
+for(i=1;i<=n;i++)
+{
+    scanf("%f",&mang[i]);
+}
+for(i=1;i<=n;i++)
+{
+    tb+=mang[i];
+    if(mang[i]>0)
+        {
+        tb1+=mang[i];
+        s1++;
+        }
+    else if(mang[i]<0)
+           {
+            tb2+=mang[i];
+            s2++;
+           }
+         else continue;
+}
+if(s1==0) tb1=0;
+else tb1=tb1/s1;
+if(s2==0) tb2=0;
+else tb2=tb2/s2;
+printf("Co %d so duong\nTbcong so duong: %f\nCo %d so am\nTbcong so am: %f\nTbcong ca day so: %f",s1,tb1,s2,tb2,tb/n);
+
+}
