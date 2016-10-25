@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<math.h>
+void main(){
+int n,i,j,s=0;
+printf("Nhap so toa do?:\n");
+scanf("%d",&n);
+float mang[n][2];
+printf("Nhap toa do:\n");
+for(i=1;i<=n;i++)
+{
+    printf("Toa do %d:\t\n",i);
+    for(j=1;j<=2;j++)
+    {
+        scanf("%f",&mang[i][j]);
+    }
+}
+printf("Cac toa do ban nhap la:\n");
+for(i=1;i<=n;i++)
+{
+    printf("(%.2f,%.2f)\t",mang[i][1],mang[i][2]);
+    if(fabs(mang[i][1])==fabs(mang[i][2]))
+        s++;
+    else
+        continue;
+}
+printf("\nCo %d diem thuoc goc phan tu",s);
+}
