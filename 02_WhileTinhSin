@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<math.h>
+void main(){
+float x,eps,phu,i=0,s=0;
+printf("Nhap x va eps:\n");
+scanf("%f%f",&x,&eps);
+int GiaiThua(int a){
+    int giaiThua=1;
+    while(a>1)
+    {
+        giaiThua*=a;
+        a--;
+    }
+    return giaiThua;
+}
+while(i>=0)
+{
+    phu=(pow(-1,i)*pow(x,2*i+1))/GiaiThua(2*i+1);
+    s+=phu;
+    if(fabs(phu)<=eps)
+        break;
+    else
+        i++;
+}
+printf("Sin[x]=%f",s);
+}
