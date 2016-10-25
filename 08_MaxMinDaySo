@@ -1,0 +1,29 @@
+#include<stdio.h>
+void main(){
+int n,i;
+printf("Co bao nhieu so:\n");
+scanf("%d",&n);
+float mang[n],max=0;
+printf("Nhap day so:\n");
+for(i=1;i<=n;i++)
+{
+    scanf("%f",&mang[i]);
+}
+for(i=1;i<=n;i++)
+{
+    if(mang[i]>max) max=mang[i];
+    else continue;
+}
+float min=max;
+for(i=1;i<=n;i++)
+{
+    if(mang[i]<min) min=mang[i];
+    else continue;
+}
+for(i=1;i<=n;i++)
+{
+    if(mang[i]==max)    printf("GTLN=%.2f\tVi tri thu %d\n",max,i);
+    else if(mang[i]==min)    printf("GTNN=%.2f\tVi tri thu %d\n",min,i);
+         else continue;
+}
+}
